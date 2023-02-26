@@ -1,0 +1,78 @@
+body {
+    background-color: beige;
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    font-family: cursive;
+    font-style: bold;
+    /* font-variant: small-caps; */
+    font-weight: bold;
+    font-size: large;
+}
+h3 {
+    color: brown;
+}
+h1 {
+    color: coral;
+}
+hr {
+    border-top-style: dotted;
+    border-width: 2px;
+    width: 10%;
+}
+.round_img {
+    width: 50%;
+    border-radius: 50% 25% 10% 5%;
+    border-width: 5px;
+    /* border-radius: 5%; */
+    border-color: crimson;
+    border-style: double;
+    padding: 0%;
+}
+
+.border_ul {
+    /* background-color: greenyellow; */
+    background-image: url("https://picsum.photos/seed/picsum/200/300");
+    background-repeat: repeat;
+    position: relative;
+    list-style: none;
+    margin-left: 0;
+    padding-left: 1;
+}
+
+ul li:before {
+    content: ">>";
+    position: absolute;
+    left: 0;
+}
+
+.border_ol {
+    /* background-color: greenyellow; */
+    background-image: url("/2023_02_12/images/sample_img.jpg");
+    background-repeat: repeat;
+    opacity: 50%;
+}
+
+.guinea-pig {
+    /* direction: rtl; */
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    /* text-align: center; */
+    text-indent:40px;
+    text-decoration: underline;
+    text-transform: capitalize;
+    text-shadow: 2px 2px 4px red;
+}
+.heading:visited {
+    color: aqua;
+}
+
+.heading:link{
+    color: blueviolet;
+}
+
+.heading:hover{
+    color:coral;
+}
+
+.heading:active{
+    color:darkblue;
+}
