@@ -268,24 +268,266 @@ function Student(nm, standard){ // this referes to the object who is calling thi
 
 // ------------------------------------------------------------------------------
 
-let a = ['a', 'b', 'c'] // [[0, 'a'], [1, 'b'], [2, 'c']]
-for (let i in a){
-    console.log(i, a[i])
-}
+// let a = ['a', 'b', 'c'] // [[0, 'a'], [1, 'b'], [2, 'c']]
+// for (let i in a){
+//     console.log(i, a[i])
+// }
 
-console.log("------------------------------------")
+// // console.log("------------------------------------")
 
-for (const [idx, val] of a.entries()){
-    console.log(idx, val)
-}
+// for (const [idx, val] of a.entries()){
+//     console.log(idx, val)
+// }
 
-console.log("------------------------------------")
+// console.log("------------------------------------")
 
-a.forEach((idx, val) => {
-    console.log(idx, val)
+// a.forEach((idx, val) => {
+//     console.log(idx, val)
+//     }
+// )
+
+// console.log("------------------------------------")
+
+// console.log(a.entries())
+
+
+// ------------------------------------------------------------------------------------------
+
+
+// reference passing
+// reference passing allows a variable to be modified by the function it is passed to
+
+// passing by value
+
+// let num = 0;
+
+// function incrementValue(number){
+//     number ++ // num ->1
+//     console.log("inside function")
+//     console.log(number)
+// }
+
+// incrementValue(num) // the value of num is getting passed, not the variable
+// console.log("Outside Function")
+// console.log(num)
+
+// passing by reference
+
+// let arr = [3,4]
+// console.log('post declaration')
+// console.log(arr)
+
+// // declaring a function
+// function arrayModify(arg){
+//     arg[0] = 5
+//     arg[1] = 6
+//     console.log("inside function")
+//     console.log(arr)
+// }
+
+// arrayModify(arr); // arr is getting passed not the value of the array
+// console.log("Outside Function")
+// console.log(arr)
+
+// objects are always passed by reference
+
+
+// let num = 5
+
+// function decrement(num){
+//     num--;
+//     console.log(num) // 4
+// }
+
+// decrement(num);
+// console.log(num); // 5
+
+// 4 5
+
+
+// objects are always passed by reference
+
+// let arr = [10, 11, 21, 13, 14, 15]
+
+// function incrArr(arr){
+//     // arr[0]++
+//     // arr[1]++
+//     // console.log(arr)
+//     for (let j = 0; j < arr.length; j ++){
+//         for (let i = 0; i < arr.length; i++){
+//             if (i % 2 == 1) {
+//                 arr[i] = "a";
+//                 console.log(arr);
+//                  // stop the execution of the inner loop - depends on the scope as well
+//             }
+//         }
+//         break; 
+//     }
+// }
+
+// // continue -> continue executing but skip the rest of the steps below me in the current execution
+
+// incrArr(arr)
+// console.log(arr)
+
+
+// for (var i = 1; i < 6; i++){
+//     if (i == 3){
+//         continue // skip all the statements below me and go to the next execution
+//     }
+//     console.log(i)
+// }
+
+// console.log(`broken at ${i}`)
+
+
+// ------------------------------------------------------------------------
+
+// SET - collection of unique elements
+
+// let emptySet = new Set();
+
+// let names = new Set(['reddy', 'chandrakala', 'ankit', 'priyanka', 'reddy'])
+
+// let names1 = new Set(['reddy', 'chandrakala', 'ankit', 'priyanka'])
+
+// console.log(names == names1) // equality operator of sets ??
+
+
+// let names = new Set()
+// // add values inside Set
+// names.add('Subhash')
+// names.add('Kiran')
+// names.add('ankit')
+// names.add('Subhash')
+// names.add('Subhash')
+
+// console.log(names)
+// console.log(names.size)
+
+
+// names.delete('ankit')
+
+// console.log(names)
+// console.log(names.size)
+
+// console.log(names.has('Kiran'))
+
+// names.forEach(
+//     function(name){
+//         console.log(name)
+//     }
+// )
+
+// console.log(names[0]) // you cannot access an set element by its index
+
+// indexing doesnot work inside a set
+
+
+// let places = new Set(['noida', 'ahmedabad', 'jalgaon', 'delhi', 'noida', 'goa'])
+
+// places.forEach(function(place){
+//     console.log(place)
+// })
+
+
+
+// ------------------------------------------------------------------------------
+
+// recursion - technique by which a function calls itself
+
+// function fact(num){
+//     if (num == 0){
+//         return 1
+//     }
+//     return num * fact(num - 1)
+// }
+
+// function fact(num){
+//     // 
+// }
+
+// let fac = fact(10)
+// console.log(fac)
+
+
+
+//
+/*
+all the unacceptable blocks
+all the eliminated cases
+ideal case
+*/
+
+// if num < 0 -> fact of negative numbers not possible
+// if number == 0 or number == 1 -> return 1
+// ideal case
+
+
+
+function sum(num){
+    try{
+        if (num == 0){
+            return 1;
+        }
     }
-)
+    catch{
+        return num + sum(num - 1)
+    }
+}
+// console.log(sum(6))
 
-console.log("------------------------------------")
+// stack overflow exception
 
-console.log(a.entries())
+// --------------------------------------------------------------------------
+
+// defined a class
+class Person{
+    // class has a function introduceYourselves
+    introduceYourselves(){
+        console.log(`Hi, my name is ${this.name}, and my age is ${this.age}`)
+    }
+}
+
+let person1 = new Person(); // defined an object
+
+// defining object attributes and setting their values
+person1.name = "priyanka"; 
+person1.age = 21
+person1.introduceYourselves() // calling a function
+
+
+let person2 = new Person(); // defined an object
+
+// defining object attributes and setting their values
+person2.name = "ankit"; 
+person2.age = 22
+person2.introduceYourselves() // calling a function
+
+
+// this -> refers to the current class object
+// it is used to access/modify object properties/attributes and call the functions inside the class
+
+class Rectangle{
+    calcArea(){
+        return this.height * this.width
+    }
+    calcPerimeter(){
+        return 2 * (this.height + this.width)
+    }
+    printData(){
+        console.log("Width = " + this.width)
+        console.log("Height = " + this.height)
+        let area = this.calcArea()
+        let perimeter = this.calcPerimeter()
+        console.log("Area = " + area + ", Perimeter : ", + perimeter)
+    }
+}
+
+var rectangle = new Rectangle()
+rectangle.width = 3
+rectangle.height = 4
+rectangle.printData()
+
+
+// implement Square, Circle
