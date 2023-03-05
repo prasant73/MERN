@@ -654,7 +654,7 @@ class Student{
         "english_8":["the tsunami","glimpses of the past"]
     }
     
-    constructor (name, standard){
+    constructor (name, standard) {
         this._name = name
         this._standard = standard
         this._regd = this.reg_generator
@@ -693,5 +693,144 @@ class Student{
 }
 
 
-let st1 = new Student('antony', 10)
-st1.viewData()
+// let st1 = new Student('antony', 10)
+// st1.viewData()
+
+// -------------------------------------------------------------
+// relationship between classes
+
+// Inheritance
+
+// inheritance is basically a way by which the properties of parent classes are inherited by the child classes
+
+class LessNumberOfArgumentsError extends Error{
+    constructor (errorMsg){
+        super(errorMsg)
+    }
+}
+
+// Abstract class -> cannot be instantiated directly - you cannot make a direct object of this class
+class Vehicle{
+    constructor (brand, model, price) {
+        if (this.constructor == Vehicle){
+            throw new Error("Abstract classes cannot be instantiated directly")
+        }
+        this._brand = brand
+        this._model = model
+        this._price = price
+    }
+
+    get gears(){return this._gears}
+
+    get tyre_type(){return this._tyre_type}
+
+    getInsuranceCost(months=12){ // method overriding
+        console.log("from Vehicle Class")
+        return months * 0
+    }
+
+    puncture () { // method overloading -> polymorphism (poly -> many, morph -> forms)
+        // depending upon who is calling, it is behaving differently
+        console.log(this.constructor.name)
+        if (this.constructor.name == "Bicycle") {
+            console.log("check " + this._cap)
+            console.log("check " + this._tyre_type)
+        } else if (this.constructor.name == "SportsBicycle") {
+            console.log("take it to mechanic")
+        } else if (this.constructor.name == "Scooter"){
+            console.log("check " + this._tyre_type)
+            console.log("check " + this._gears)
+        } else if (arguments.length == 1){
+            if (this.constructor.name == "Car"){
+                console.log("check " + this._tyre_type)
+            }
+        }
+    }
+
+    printVehicleData () {
+        console.log("brand : " + this._brand)
+        console.log(this instanceof Car)
+        console.log(this.constructor.name) // you can get the class name
+        console.log("model : " + this._model)
+        console.log("price : " + this._price)
+        console.log('gears : ' + this._gears)
+        console.log("insurance Cost : " + this.getInsuranceCost())
+    }
+}
+
+// Scooter is a vehicle
+class Scooter extends Vehicle{
+    // all the functions from the vehicle class can be accessible from the child(Scooter) class but vice versa is not true
+    
+    constructor(brand, model, price, gears="1f4b", tyre_type="tubeless") {
+        super(brand, model, price)
+        this._gears = gears
+        this._tyre_type = tyre_type
+    }
+    
+    getInsuranceCost(months=12){ // getInsuranceCost method from Scooter class is OVERRIDING the getInsuranceCost method from its parent class
+        // method overriding -> polymorphism
+        console.log("from Scooter Class")
+        return months * 20
+    }
+
+    // puncture()
+}
+
+// Car is a a Vehicle
+class Car extends Vehicle{
+    constructor(brand, model, price, gears="5+R", tyre_type="tubeless") {
+        super(brand, model, price)
+        this._gears = gears
+        this._tyre_type = tyre_type
+    }
+    getInsuranceCost(months=12){ // method overriding
+        console.log("from Car Class")
+        return months * 50
+    }
+}
+
+// bicycle is a vehicle
+class Bicycle extends Vehicle{
+    constructor(brand, model, price, gears=0, tyre_type="tube", cap="nylon cap") {
+        super(brand, model, price)
+        this._gears = gears
+        this._tyre_type = tyre_type
+        this._cap = cap
+    }
+
+    get cap(){return this._cap}
+    
+}
+
+class SportsBicycle extends Bicycle{
+    constructor (brand, model, price, gears, body_material="sturdy_aluminium"){
+        super(brand, model, price, gears)
+        this._body_material = body_material
+    }
+
+}
+
+let sc1 = new Scooter('Bajaj', 'Vespa', 95000)
+let car1 = new Car('Tata', 'Tiago', 750000)
+let bc1 = new Bicycle('TVS', 'Star City', 5000)
+let sb1 = new SportsBicycle('KTM',  model='MyByk', price=50000, gears='3f9b') // 'KTM', 'MyByk', 50000, '3f9b' these avaslues are positional arguments
+
+// positional arguments, keyword arguments
+// positional arguments -> keyword arguments
+
+sc1.printVehicleData()
+car1.printVehicleData()
+bc1.printVehicleData()
+sb1.printVehicleData()
+
+sc1.puncture()
+car1.puncture()
+bc1.puncture()
+sb1.puncture()
+
+let v1 = new Vehicle()
+
+console.log("Scooter Insurance Cost : " + sc1.getInsuranceCost(12))
+console.log("Car Insurance Cost : " + car1.getInsuranceCost(12))
+console.log("Bicycle Insurance Cost : " + bc1.getInsuranceCost(12))
