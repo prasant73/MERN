@@ -834,3 +834,22 @@ let v1 = new Vehicle()
 console.log("Scooter Insurance Cost : " + sc1.getInsuranceCost(12))
 console.log("Car Insurance Cost : " + car1.getInsuranceCost(12))
 console.log("Bicycle Insurance Cost : " + bc1.getInsuranceCost(12))
+
+
+
+
+
+/*
+Staff - name, desg, salary, 
+    Teaching Staff
+        Teacher
+            - Biology Teacher
+            - History Teacher
+        Assistants
+    Non Teaching Staff
+        peons
+        principal
+        accounts
+    
+
+*/
