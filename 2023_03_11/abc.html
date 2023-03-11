@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; color: #333}
+        body {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        div, article {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #dedede;
+        }
+    </style>
+</head>
+<body>
+    <!-- <a id="nav" href="index.html">Home</a>
+    <button id="changeBackground">Button with changing background</button> -->
+
+        <h1>Accessing elements in the DOM</h1>
+        <h2>ID #demo</h2>
+        <div id="demo">Accessing using ID</div>
+
+        <h2>Class .demo</h2>
+        <div class="demo">Access using Class 1</div>
+        <div class="demo">Access using Class 2</div>
+
+        <h2>Tag - article</h2>
+        <article>Accessing using tag (1)</article>
+        <article>Accessing using tag (1)</article>
+
+        <h2>Query Selector</h2>
+        <div id="demo-query">Accessing using query</div>
+
+        <h2>Query Selector All</h2>
+        <div class="demo-query-all">Accessing using query selector all - 1</div>
+        <div class="demo-query-all">Accessing using query selector all - 2</div>
+
+
+
+    <script>
+        // let button = document.getElementById("changeBackground")
+        
+        // button.addEventListener('click', () => {
+        //     document.body.style.backgroundColor = "blue";
+        // });
+
+        // let navlink = document.getElementById('nav')
+        // navlink.href = "https://www.google.com"
+        // navlink.textContent = "Lets go to Google"
+
+        // getElementByClassName
+        // getElementById
+        // getElementsByTagName
+        // querySelector
+        // querySelectorAll
+
+        const demoId = document.getElementById("demo");
+        const demoClass = document.getElementsByClassName("demo");
+        const demoTag = document.getElementsByTagName('article');
+        const demoQuery = document.querySelector('#demo-query');
+        const demoQueryAll = document.querySelectorAll('.demo-query-all')
+
+        demoId.style.border = '1px solid red';
+
+        for (let i = 0; i<demoClass.length; i++){
+            demoClass[i].style.border = '2px solid green';
+        }
+
+        for (let i = 0; i<demoTag.length; i++){
+            demoTag[i].style.border = '2px solid blue';
+        }
+
+        demoQuery.style.border = "5px solid red"
+
+        demoQueryAll.forEach(query => {
+            query.style.border = "2px dotted purple"
+        })
+
+    </script>
+</body>
+</html>
