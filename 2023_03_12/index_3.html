@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <style>
+        body{
+            max-width: 600px;
+            margin: 0 auto;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .active{
+            border: 2px solid blue;
+        }
+        .warning{
+            border: 2px solid red;
+        }
+        .hidden{
+            display: none;
+        }
+        div{
+            border: 2px dashed grey;
+            padding: 20px;
+            margin: 5px;
+        }
+    </style> -->
+</head>
+<body>
+    <!-- <a id="nav" href="index.html">index</a>
+    <a id="nav" href="index_1.html">index_1</a>
+    <a id="nav" href="index_2.html">index_2</a>
+    <hr>
+    <div>Div 1</div>
+    <div class="hidden">Div 2</div> -->
+    
+    <div style="height: 100px; width: 100px; border: 2px solid black;">Div</div>
+
+    <script>
+        const div = document.querySelector('div');
+        // div.setAttribute('style', 'text-align: center; border: 2px dotted blue;');
+        // div.setAttribute('style', 'text-align: right; border: 2px solid green');
+        
+        div.style.height = '200px';
+        div.style.borderRadius = '50%';
+        // div.style.justifyContent = 'center';
+        // div.style.alignItems = 'center';
+
+
+
+        // const div = document.querySelector('div');
+        // div.className = 'warning';
+
+        // const activeDiv = document.querySelector('.hidden');
+        // // activeDiv.classList.add('hidden');
+        // // activeDiv.classList.remove('hidden');
+        // activeDiv.classList.toggle('hidden');
+        // // activeDiv.classList.replace('active', 'warning')
+    </script>
+</body>
+</html>
