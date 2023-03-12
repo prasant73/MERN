@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Learning about Nodes</title>
+    <style>
+        * {
+            border: 2px solid #dedede;
+            padding: 15 px;
+            margin: 15 px;
+        }
+        html {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            max-width: 600px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <a id="nav" href="index_1.html">index_1</a>
+    <a id="nav" href="index_2.html">index_2</a>
+    <a id="nav" href="index_3.html">index_3</a>
+    <h1>Shark World</h1>
+    <p>Info about <strong>Sharks</strong> related info</p>
+    <h2>Shark Names</h2>
+    <ul>
+        <li>Amit jain</li>
+        <li>Ashneer Grover</li>
+        <li>Aman gupta</li>
+        <li>Namita Thapar</li>
+        <li>Peeyush Bansal</li>
+        <li>Kiran Shinde</li>
+    </ul>
+    <p>More Info about <strong>Sharks</strong></p>
+    
+    <script>
+        const h1 = document.getElementsByTagName('h1');
+        const p = document.getElementsByTagName('p')[0];
+        // document.getElementByTagName('ul').childNodes[1].style.background = "blue"; // to-do
+        const ul = document.getElementsByTagName('ul')[0];
+        // const html = document.documentElement;
+        // ul.firstElementChild.style.background = "yellow";
+        // for (let element of ul.children){
+        //     if (element.innerText == 'Ashneer Grover'){
+        //         element.style.background = 'blue'
+        //     } else{
+        //     element.style.background = "yellow";
+        //     }
+        // }
+        // document.body.children[3]
+        // document.body.children[3].children[3].style.background = 'pink'
+        // 'pink'
+        // document.body.children[3].lastElementChild.style.background = 'green'
+        // 'green'
+        // document.body.children[3].lastElementChild.style.background = 'magenta'
+        // 'magenta'
+        // document.body.children[3].lastElementChild.style.background = 'lavender'
+        // 'lavender'
+
+
+        // PARENT NODES, CHILD NODES, SIBLING NODES
+
+        const ulf = ul.children[1];
+        // ul_fchild
+        // <li>​::marker​"Ashneer Grover"</li>​
+        // ulf = ul_fchild
+        // <li>​…​</li>​
+        // ulf.previousSibling
+        // #textassignedSlot: nullbaseURI: "http://127.0.0.1:5500/2023_03_12/index.html"childNodes: NodeList []data: "\n        "firstChild: nullisConnected: truelastChild: nulllength: 9nextElementSibling: linextSibling: linodeName: "#text"nodeType: 3nodeValue: "\n        "ownerDocument: documentparentElement: ulparentNode: ulpreviousElementSibling: lipreviousSibling: litextContent: "\n        "wholeText: "\n        "[[Prototype]]: Text
+        // ulf.previousElementSibling
+        // <li>​…​</li>​::marker​"Amit jain"</li>​
+        // ulf.nextElementSibling
+        // <li>​…​</li>​::marker​"Aman gupta"</li>​
+
+
+        // >>>>>>>>>>>>
+        // difference between child nodes and children: childnodes include text, children include only elements
+        for (let element of p.childNodes){
+            console.log(element)
+        }
+    </script>
+</body>
+</html>
+
+
+

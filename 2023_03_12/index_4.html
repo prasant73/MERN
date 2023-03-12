@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <!-- <button onclick="changeText()">Click me</button> -->
+    <button>Click me</button>
+    <p>Miss Me</p>
+    <script>
+        const p = document.querySelector('p');
+        const button = document.querySelector('button');
+
+        const changeText = () => {
+            // const p = document.querySelector('p');
+            p.textContent = "Sherlock is Back";
+        }
+
+        const changeText1 = () => {
+            // const p = document.querySelector('p');
+            p.textContent = "Moriarty is Back";
+        }
+
+        const changeText2 = () => {
+            // const p = document.querySelector('p');
+            p.textContent = "Sherlock and Moriarty are Back";
+        }
+
+        // const changeText3 = () => {
+        //     // const p = document.querySelector('p');
+        //     p.textContent = "Irene says Hi";
+        // }
+        const alertText = () => {
+            alert('alerting!!!')
+        }
+
+        // const button = document.querySelector('button');
+        // button.onclick = changeText;
+        // button.onclick = alertText;
+        // button.addEventListener('click', changeText);
+        button.addEventListener('mouseover', changeText, false);
+        button.addEventListener('mouseout', changeText1, false);
+        button.addEventListener('dblclick', changeText2, false);
+        // button.addEventListener('mousemove', changeText3, false);
+
+        
+    </script>
+</body>
+</html>
