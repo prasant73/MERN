@@ -1,0 +1,3 @@
+media queries
+flex(ible) layouts
+responsive images -> svg and using vectors
