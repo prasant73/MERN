@@ -6,6 +6,18 @@ const ContactList = (props) => {
     const removeContactHandler = (id) => {
         props.getContactId(id);
     };
+
+    // const contacts = [{
+    //     id: "1",
+    //     "name": "Prasant",
+    //     "email": "abc@pk.com"
+    // },
+    // {
+    //     id: "2",
+    //     "name": "Prsdfasant",
+    //     "email": "absdfc@pk.com"
+    // }]
+    // const renderContactList = props.contacts.map((contact) => {
     const renderContactList = props.contacts.map((contact) => {
         return (
             <ContactCard 
