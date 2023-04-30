@@ -1,0 +1,33 @@
+1 - break string into dictionary/object words
+2 - check if any anagram of a string is palindrome or not
+3 - Find the peak element in an array -> Peak element of an array is the element which is greater than its neighbors
+4 - Find the highest peak element of an array -> AMAZON/GOOGLE/ADOBE
+5 - find anagrams of a string in an array
+6 - Combination Sum [50 elements, containing positive and negative numbers], combination of elements whose sum is equal to x(variable)
+7 - Combination Sum [50 elements, containing positive and negative numbers], combination of 'n' elements whose sum is equal to x(variable)
+8 - missing number in an arithmetic progression, geometric progression
+9 - move all zeros to end of an array
+10 - Removing elements from the middle ->
+   a - removing elements by index
+   b - removing element by value 
+        -> [1, 2, 3, 4, 5] => [1, 2, 4, 5]
+        -> [1, 2, 3, 4, 3, 5] => 3 => [1, 2, 4, 5]
+
+
+[1, 1000, 2, 3, 4, 5, 6, 34, 3, 2, 6, 7]
+
+-
+
+
+
+anagram ->
+
+listen -> silent 
+fired -> fried
+fast -> fats
+heart -> earth
+
+
+rotation - 
+
+include -> einclud -> deinclu -> udeincl

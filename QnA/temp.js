@@ -7,12 +7,8 @@ const interface = readline.createInterface({
 
 interface.question("Enter the Character ", (value) => {
   interface.question("Enter the n times ", (max_num) => {
-    for (let increment = max_num; increment > 0; increment--) {
-      console.log(
-        " ".repeat(increment) +
-          value.repeat(max_num - increment + 1) +
-          value.repeat(max_num - increment)
-      );
+    for (let increment =max_num; increment>=0; increment--) {
+      console.log(" ".repeat(max_num - increment) +value.repeat(increment));
     }
     interface.close();
   });
